@@ -1,18 +1,16 @@
 package com.httpthiago.desafiostonepayments.model;
 
-import com.httpthiago.desafiostonepayments.dto.CreateProductDTO;
+import com.httpthiago.desafiostonepayments.dto.ProductDTO;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
-import org.hibernate.annotations.GenericGenerator;
 
 import java.io.Serializable;
 import java.math.BigDecimal;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
-import java.util.UUID;
 
 @Entity
 @Table(name = "products")
@@ -40,8 +38,8 @@ public class Product implements Serializable {
     @Column(name = "registry_date")
     private LocalDate date;
 
-    public CreateProductDTO convertToDto() {
-        CreateProductDTO dto = new CreateProductDTO();
+    public ProductDTO convertToDto() {
+        ProductDTO dto = new ProductDTO();
         dto.setTitle(this.getTitle());
         dto.setPrice(this.getPrice());
         dto.setZipcode(this.getZipcode());

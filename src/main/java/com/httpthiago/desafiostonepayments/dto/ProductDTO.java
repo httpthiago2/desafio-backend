@@ -1,7 +1,6 @@
 package com.httpthiago.desafiostonepayments.dto;
 
 import com.httpthiago.desafiostonepayments.model.Product;
-import jakarta.persistence.Column;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
@@ -11,7 +10,7 @@ import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 
 @Getter @Setter @NoArgsConstructor
-public class CreateProductDTO {
+public class ProductDTO {
     private String title;
     private BigDecimal price;
     private String zipcode;

@@ -1,8 +1,6 @@
 package com.httpthiago.desafiostonepayments.controller;
 
-import com.httpthiago.desafiostonepayments.dto.CreateProductDTO;
-import com.httpthiago.desafiostonepayments.model.Product;
-import com.httpthiago.desafiostonepayments.repository.ProductRepository;
+import com.httpthiago.desafiostonepayments.dto.ProductDTO;
 import com.httpthiago.desafiostonepayments.service.ProductService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
@@ -18,7 +16,7 @@ public class ProductController {
     private ProductService productService;
 
     @GetMapping(produces = MediaType.APPLICATION_JSON_VALUE)
-    public List<CreateProductDTO> findAll() {
+    public List<ProductDTO> findAll() {
         return productService.findAll();
     }
 
@@ -26,7 +24,7 @@ public class ProductController {
             produces = MediaType.APPLICATION_JSON_VALUE,
             consumes = MediaType.APPLICATION_JSON_VALUE
     )
-    public CreateProductDTO create(@RequestBody CreateProductDTO product) {
+    public ProductDTO create(@RequestBody ProductDTO product) {
         return productService.createProduct(product);
     }
 }
